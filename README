@@ -1,0 +1,6 @@
+1. install cscope
+2. install ctags
+3. 如果用到python的话: pip install pyflakes
+4. 链接到家目录
+    ln -s .vim ~/.vim
+    ln -s .vimrc ~/.vimrc
