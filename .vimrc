@@ -131,3 +131,5 @@ let g:ignorebuffers = ['NERD_tree_1']
 let g:molokai_original = 1
 "let g:rehash256 = 1
 hi CursorLine cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
+
+":let g:NERDTreeWinSize=20
