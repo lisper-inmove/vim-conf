@@ -133,3 +133,4 @@ let g:molokai_original = 1
 hi CursorLine cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
 
 ":let g:NERDTreeWinSize=20
+":let g:tagbar_width=20
