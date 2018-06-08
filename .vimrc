@@ -82,10 +82,10 @@ inoremap <C-e> <End>
 inoremap <C-a> <Home>
 
 " 窗口切割之后的光标移动
-nnoremap <C-Left> <C-w>h
-nnoremap <C-Down> <C-w>j
-nnoremap <C-Up> <C-w>k
-nnoremap <C-Right> <C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 " NERDTreeToggle设置
 map <F3> :NERDTreeToggle<CR>
@@ -132,5 +132,5 @@ let g:molokai_original = 1
 "let g:rehash256 = 1
 hi CursorLine cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
 
-":let g:NERDTreeWinSize=20
-":let g:tagbar_width=20
+:let g:NERDTreeWinSize=20
+:let g:tagbar_width=20
