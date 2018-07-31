@@ -169,3 +169,10 @@ function ShortTabLine()
 endfunction
 
 set spell
+
+func! DeleteTrailingWS()
+    exe "normal mz"
+    %s/\s\+$//ge
+    exe "normal `z"
+endfunc
+noremap <leader>w :call DeleteTrailingWS()<CR>
