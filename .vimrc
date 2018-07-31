@@ -134,3 +134,10 @@ hi CursorLine cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
 
 :let g:NERDTreeWinSize=20
 :let g:tagbar_width=20
+
+func! DeleteTrailingWS()
+    exe "normal mz"
+    %s/\s\+$//ge
+    exe "normal `z"
+endfunc
+noremap <leader>w :call DeleteTrailingWS()<CR>
