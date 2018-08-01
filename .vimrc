@@ -17,7 +17,6 @@ set hidden
 set ts=4
 " 突出显示当前行
 set cursorline
-set cursorcolumn
 " 突出显示当前列
 "set cursorcolumn
 set expandtab
@@ -168,7 +167,7 @@ function ShortTabLine()
     return ret
 endfunction
 
-set spell
+"set spell
 
 func! DeleteTrailingWS()
     exe "normal mz"
