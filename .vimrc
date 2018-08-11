@@ -91,7 +91,7 @@ nnoremap <C-l> <C-w>l
 map <F3> :NERDTreeToggle<CR>
 let NERDSpaceDelims=1
 let NERDCompactSexyComs=1
-let NERDTreeIgnore=["\.pyc$", "\.bin$"]
+let NERDTreeIgnore=["\.pyc$", "\.bin$", "__pycache__"]
 let g:nerdtree_tabs_open_on_console_startup = 1
 let NERDTreeShowBookmarks=1
 let NERDSpaceDelims = 1
