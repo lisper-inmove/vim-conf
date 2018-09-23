@@ -91,7 +91,7 @@ nnoremap <C-l> <C-w>l
 map <F3> :NERDTreeToggle<CR>
 let NERDSpaceDelims=1
 let NERDCompactSexyComs=1
-let NERDTreeIgnore=["\.pyc$", "\.bin$"]
+let NERDTreeIgnore=["\.pyc$", "\.bin$", "__pycache__"]
 let g:nerdtree_tabs_open_on_console_startup = 1
 let NERDTreeShowBookmarks=1
 let NERDSpaceDelims = 1
@@ -131,9 +131,49 @@ let g:ignorebuffers = ['NERD_tree_1']
 let g:molokai_original = 1
 "let g:rehash256 = 1
 hi CursorLine cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
+"hi CursorColumn cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
 
 :let g:NERDTreeWinSize=20
 :let g:tagbar_width=20
 
 let g:markdown_enable_spell_checking = 1
 let g:markdown_enable_conceal = 1
+function ShortTabLine()
+    let ret = ''
+    for i in range(tabpagenr('$'))
+        " select the color group for highlighting active tab
+        if i + 1 == tabpagenr()
+            let ret .= '%#errorMsg#'
+        else
+            let ret .= '%#TabLine#'
+        endif
+        " find the buffername for the tablebel
+        let buflist = tabpagebuflist(i + 1)
+        let winnr = tabpagewinnr(i + 1)
+        let buffername = bufname(buflist[winnr - 1])
+        let filename = fnamemodify(buffername, ':t')
+        " check if there is no name
+        if filename == ''
+            let filename = 'noname'
+        endif
+        " only show the first 6 letters of the name and
+        " .. if the filename is more than 8 letters long
+        if strlen(filename) >= 8
+            let ret .= '['. filename[0:5]. '..]'
+        else
+            let ret .= '['.filename.']'
+        endif
+    endfor
+    " after the last tab fill with TabLineFill and reset tab page #
+    let ret .= '%#TabLineFill#%T'
+    return ret
+endfunction
+
+"set spell
+
+func! DeleteTrailingWS()
+    exe "normal mz"
+    %s/\s\+$//ge
+    exe "normal `z"
+endfunc
+noremap <leader>w :call DeleteTrailingWS()<CR>
