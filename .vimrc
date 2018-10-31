@@ -92,10 +92,19 @@ map <F3> :NERDTreeToggle<CR>
 let NERDSpaceDelims=1
 let NERDCompactSexyComs=1
 let NERDTreeIgnore=["\.pyc$", "\.bin$"]
-let g:nerdtree_tabs_open_on_console_startup = 1
+
+" set nerdtree always open on vim start up
+" let g:nerdtree_tabs_open_on_console_startup = 1
+
 let NERDTreeShowBookmarks=1
 let NERDSpaceDelims = 1
 let NERDCompactSexyComs = 1
+
+" set nerdtree do not open on vim start up if a file is specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" set nerdtree do not open on vim start up if a directory is specified
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 
 let g:airline#extensions#tabline#enable = 1
 let g:airline#extensions#tabline#left_sep = " "
@@ -132,5 +141,5 @@ let g:molokai_original = 1
 "let g:rehash256 = 1
 hi CursorLine cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
 
-":let g:NERDTreeWinSize=20
-":let g:tagbar_width=20
+:let g:NERDTreeWinSize=20
+:let g:tagbar_width=20
