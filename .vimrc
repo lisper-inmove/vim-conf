@@ -87,7 +87,7 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" NERDTreeToggle设置
+" NERDTree setting start -----------------------------
 map <F3> :NERDTreeToggle<CR>
 let NERDSpaceDelims=1
 let NERDCompactSexyComs=1
@@ -104,6 +104,11 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " set nerdtree do not open on vim start up if a directory is specified
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+
+" auto close nerdtree when open a file
+let NERDTreeQuitOnOpen = 1
+
+" NERDTree setting end -------------------------------
 
 let g:airline#extensions#tabline#enable = 1
 let g:airline#extensions#tabline#left_sep = " "
@@ -133,7 +138,7 @@ let g:pyflakes_use_quickfix = 0
 
 " 关闭打开buffer browser
 nnoremap <F4> :ToggleBufExplorer<CR>
-" 设置bufexplorer忽略这个buffer.因为bufexplorer在NERD_tree_1中使用的时候有buf
+" 设置bufexplorer忽略这个buffer.因为bufexplorer在NERD_tree_1中使用的时候有bug
 let g:ignorebuffers = ['NERD_tree_1']
 
 let g:molokai_original = 1
@@ -177,8 +182,9 @@ function ShortTabLine()
     return ret
 endfunction
 
-"set spell
+" set spell
 
+" delete white space after the line
 func! DeleteTrailingWS()
     exe "normal mz"
     %s/\s\+$//ge
