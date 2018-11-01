@@ -204,3 +204,7 @@ func! DeleteTrailingWS()
     exe "normal `z"
 endfunc
 noremap <leader>w :call DeleteTrailingWS()<CR>
+
+:let g:snips_author="inmove"
+:let g:snips_email="lisper.inmove@gmail.com"
+:let g:snips_now=strftime('%Y/%m/%d %H:%M:%S')
