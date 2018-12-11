@@ -162,7 +162,7 @@ hi CursorLine cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
 :let g:NERDTreeWinSize=20
 :let g:tagbar_width=20
 
-let g:markdown_enable_spell_checking = 1
+"let g:markdown_enable_spell_checking = 1
 let g:markdown_enable_conceal = 1
 function ShortTabLine()
     let ret = ''
