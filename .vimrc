@@ -6,6 +6,7 @@ set softtabstop=4
 set tabstop=4
 set smarttab
 set autoindent
+set nowrapscan " 搜索到文件两端时不再搜索
 " 为c提示自动缩进
 set smartindent
 " 使用c风格的缩进方案
