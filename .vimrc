@@ -163,7 +163,7 @@ hi CursorLine cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE
 :let g:NERDTreeWinSize=20
 :let g:tagbar_width=20
 
-let g:markdown_enable_spell_checking = 1
+"let g:markdown_enable_spell_checking = 1
 let g:markdown_enable_conceal = 1
 function ShortTabLine()
     let ret = ''
@@ -205,3 +205,7 @@ func! DeleteTrailingWS()
     exe "normal `z"
 endfunc
 noremap <leader>w :call DeleteTrailingWS()<CR>
+
+:let g:snips_author="inmove"
+:let g:snips_email="lisper.inmove@gmail.com"
+:let g:snips_now=strftime('%Y/%m/%d %H:%M:%S')
